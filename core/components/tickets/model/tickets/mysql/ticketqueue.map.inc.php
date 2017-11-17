@@ -4,6 +4,10 @@ $xpdo_meta_map['TicketQueue']= array (
   'version' => '1.1',
   'table' => 'tickets_mail_queues',
   'extends' => 'xPDOSimpleObject',
+  'tableMeta' => 
+  array (
+    'engine' => 'MyISAM',
+  ),
   'fields' => 
   array (
     'timestamp' => 'CURRENT_TIMESTAMP',

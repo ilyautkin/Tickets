@@ -41,7 +41,7 @@ var Tickets = {
             return false;
         });
         // Preview and submit
-        $(document).on('click touchend', '#ticketForm .preview, #ticketForm .save, #ticketForm .draft, #ticketForm .publish', function (e) {
+        $(document).on('click', '#ticketForm .preview, #ticketForm .save, #ticketForm .draft, #ticketForm .publish', function (e) {
             if ($(this).hasClass('preview')) {
                 Tickets.ticket.preview(this.form, this);
             }
@@ -51,7 +51,7 @@ var Tickets = {
             e.preventDefault();
             return false;
         });
-        $(document).on('click touchend', '#comment-form .preview, #comment-form .submit', function (e) {
+        $(document).on('click', '#comment-form .preview, #comment-form .submit', function (e) {
             if ($(this).hasClass('preview')) {
                 Tickets.comment.preview(this.form, this);
             }
@@ -73,12 +73,12 @@ var Tickets = {
             }
         });
         // Show and hide forms
-        $(document).on('click touchend', '#comment-new-link a', function (e) {
+        $(document).on('click', '#comment-new-link a', function (e) {
             Tickets.forms.comment();
             e.preventDefault();
             return false;
         });
-        $(document).on('click touchend', '.comment-reply a', function (e) {
+        $(document).on('click', '.comment-reply a', function (e) {
             var id = $(this).parents('.ticket-comment').data('id');
             if ($(this).hasClass('reply')) {
                 Tickets.forms.reply(id);
@@ -90,7 +90,7 @@ var Tickets = {
             return false;
         });
         // Votes and rating
-        $(document).on('click touchend', '.ticket-comment-rating.active > .vote', function (e) {
+        $(document).on('click', '.ticket-comment-rating.active > .vote', function (e) {
             var id = $(this).parents('.ticket-comment').data('id');
             if ($(this).hasClass('plus')) {
                 Tickets.Vote.comment.vote(this, id, 1);
@@ -101,7 +101,7 @@ var Tickets = {
             e.preventDefault();
             return false;
         });
-        $(document).on('click touchend', '.ticket-rating.active > .vote', function (e) {
+        $(document).on('click', '.ticket-rating.active > .vote', function (e) {
             var id = $(this).parents('.ticket-meta').data('id');
             if ($(this).hasClass('plus')) {
                 Tickets.Vote.ticket.vote(this, id, 1);
@@ -117,13 +117,13 @@ var Tickets = {
         });
         // --
         // Stars
-        $(document).on('click touchend', '.ticket-comment-star.active > .star', function (e) {
+        $(document).on('click', '.ticket-comment-star.active > .star', function (e) {
             var id = $(this).parents('.ticket-comment').data('id');
             Tickets.Star.comment.star(this, id, 0);
             e.preventDefault();
             return false;
         });
-        $(document).on('click touchend', '.ticket-star.active > .star', function (e) {
+        $(document).on('click', '.ticket-star.active > .star', function (e) {
             var id = $(this).parents('.ticket-meta').data('id');
             Tickets.Star.ticket.star(this, id, 0);
             e.preventDefault();
@@ -154,7 +154,7 @@ var Tickets = {
         });
 
         // Link to parent comment
-        $('#comments').on('click touchend', '.ticket-comment-up a', function () {
+        $('#comments').on('click', '.ticket-comment-up a', function () {
             var id = $(this).data('id');
             var parent = $(this).data('parent');
             if (parent && id) {
@@ -165,7 +165,7 @@ var Tickets = {
         });
 
         // Link to child comment
-        $('#comments').on('click touchend', '.ticket-comment-down a', function () {
+        $('#comments').on('click', '.ticket-comment-down a', function () {
             var child = $(this).data('child');
             if (child) {
                 Tickets.utils.goto('comment-' + child);

@@ -4,6 +4,10 @@ $xpdo_meta_map['TicketComment']= array (
   'version' => '1.1',
   'table' => 'tickets_comments',
   'extends' => 'xPDOSimpleObject',
+  'tableMeta' => 
+  array (
+    'engine' => 'MyISAM',
+  ),
   'fields' => 
   array (
     'thread' => 0,

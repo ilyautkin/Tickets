@@ -4,6 +4,10 @@ $xpdo_meta_map['TicketView']= array (
   'version' => '1.1',
   'table' => 'tickets_views',
   'extends' => 'xPDOObject',
+  'tableMeta' => 
+  array (
+    'engine' => 'MyISAM',
+  ),
   'fields' => 
   array (
     'parent' => 0,
